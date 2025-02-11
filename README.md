@@ -1,6 +1,6 @@
 ![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=POSTECH-SOAT-SALA11_application-avalanches-producao-ms&metric=alert_status)
 ![Bugs](https://sonarcloud.io/api/project_badges/measure?project=POSTECH-SOAT-SALA11_application-avalanches-producao-ms&metric=bugs)
-![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=POSTECH-SOAT-SALA11_application-avalanches-producao-ms&metric=code_smells)
+![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=POSTECH-SOAT-SALA11_application-avalanches-pagamento-ms&metric=code_smells)
 ![Coverage](https://sonarcloud.io/api/project_badges/measure?project=POSTECH-SOAT-SALA11_application-avalanches-producao-ms&metric=coverage)
 # **Documentação do Microserviço de Consulta de Histórico e Geração de URLs: ms-video2framestatus-app**  
 Este documento descreve o funcionamento do microserviço responsável por fornecer, a partir de requisições do frontend, o histórico de solicitações de um usuário e os status delas. Para solicitações com status "concluído", o microserviço também permite que o frontend solicite uma URL auto-assinada para download do objeto armazenado no bucket S3.
