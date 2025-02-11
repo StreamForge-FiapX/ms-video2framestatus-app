@@ -1,3 +1,7 @@
+![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=POSTECH-SOAT-SALA11_application-avalanches-producao-ms&metric=alert_status)
+![Bugs](https://sonarcloud.io/api/project_badges/measure?project=POSTECH-SOAT-SALA11_application-avalanches-producao-ms&metric=bugs)
+![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=POSTECH-SOAT-SALA11_application-avalanches-pagamento-ms&metric=code_smells)
+![Coverage](https://sonarcloud.io/api/project_badges/measure?project=POSTECH-SOAT-SALA11_application-avalanches-producao-ms&metric=coverage)
 # **Documentação do Microserviço de Consulta de Histórico e Geração de URLs: ms-video2framestatus-app**  
 Este documento descreve o funcionamento do microserviço responsável por fornecer, a partir de requisições do frontend, o histórico de solicitações de um usuário e os status delas. Para solicitações com status "concluído", o microserviço também permite que o frontend solicite uma URL auto-assinada para download do objeto armazenado no bucket S3.
 
@@ -95,43 +99,23 @@ O microserviço é responsável por:
 #### **Estrutura de Diretórios**  
 ```plaintext
 ms-video2framestatus-app/
-├── src/
-│   ├── application/
-│   │   ├── ports/
-│   │   │   ├── HistoryQueryPort.cs
-│   │   │   ├── SignedUrlGeneratorPort.cs
-│   │   └── usecases/
-│   │       ├── GetUserHistoryUseCase.cs
-│   │       └── GenerateSignedUrlUseCase.cs
-│   ├── domain/
-│   │   ├── entities/
-│   │   │   ├── UserHistory.cs
-│   │   │   └── RequestStatus.cs
-│   │   ├── exceptions/
-│   │   │   └── SignedUrlException.cs
-│   │   └── services/
-│   │       └── SignedUrlService.cs
-│   ├── infrastructure/
-│   │   ├── adapters/
-│   │   │   ├── RedisQueryAdapter.cs
-│   │   │   ├── S3SignedUrlAdapter.cs
-│   │   ├── configuration/
-│   │   │   ├── DependencyInjectionConfig.cs
-│   │   │   └── AppSettings.json
-│   │   └── framework/
-│   │       └── KubernetesWorkerService.cs
-│   ├── api/
-│   │   └── UserHistoryController.cs
-│   └── Program.cs
-├── tests/
-│   ├── unit/
-│   ├── integration/
-│   ├── e2e/
-├── kubernetes/
-│   ├── deployment.yaml
-│   ├── service.yaml
-│   ├── hpa.yaml
-└── README.md
+├── Dockerfile
+├── README.md
+├── requirements.txt
+├── src
+│   ├── domain
+│   │   ├── repositories.py
+│   │   └── use_cases.py
+│   ├── infrastructure
+│   │   ├── redis_repository.py
+│   │   └── s3_event_parser.py
+│   └── main.py
+└── tests
+    ├── test_lambda_handler.py
+    ├── test_redis_repository.py
+    ├── test_repositories.py
+    ├── test_s3_event_parser.py
+    └── test_use_cases.py
 ```
 
 ---
