@@ -99,42 +99,10 @@ O microserviço é responsável por:
 #### **Estrutura de Diretórios**  
 ```plaintext
 ms-video2framestatus-app/
-├── src/
-│   ├── application/
-│   │   ├── ports/
-│   │   │   ├── HistoryQueryPort.cs
-│   │   │   ├── SignedUrlGeneratorPort.cs
-│   │   └── usecases/
-│   │       ├── GetUserHistoryUseCase.cs
-│   │       └── GenerateSignedUrlUseCase.cs
-│   ├── domain/
-│   │   ├── entities/
-│   │   │   ├── UserHistory.cs
-│   │   │   └── RequestStatus.cs
-│   │   ├── exceptions/
-│   │   │   └── SignedUrlException.cs
-│   │   └── services/
-│   │       └── SignedUrlService.cs
-│   ├── infrastructure/
-│   │   ├── adapters/
-│   │   │   ├── RedisQueryAdapter.cs
-│   │   │   ├── S3SignedUrlAdapter.cs
-│   │   ├── configuration/
-│   │   │   ├── DependencyInjectionConfig.cs
-│   │   │   └── AppSettings.json
-│   │   └── framework/
-│   │       └── KubernetesWorkerService.cs
-│   ├── api/
-│   │   └── UserHistoryController.cs
-│   └── Program.cs
-├── tests/
-│   ├── unit/
-│   ├── integration/
-│   ├── e2e/
-├── kubernetes/
-│   ├── deployment.yaml
-│   ├── service.yaml
-│   ├── hpa.yaml
+├──src
+│  ├─domain
+│  └─infrastructure
+└──tests
 └── README.md
 ```
 
