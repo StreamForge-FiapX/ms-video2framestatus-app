@@ -1,3 +1,6 @@
+from domain.repositories import RedisRepositoryInterface
+
+
 class ProcessEventUseCase:
     def __init__(self, redis_repo: RedisRepositoryInterface, s3_parser):
         self.redis_repo = redis_repo

@@ -4,7 +4,7 @@ import logging
 from datetime import datetime
 from urllib.parse import unquote
 
-from application.use_cases import ProcessEventUseCase
+from domain.use_cases import ProcessEventUseCase
 from infrastructure.s3_event_parser import S3EventParser
 from infrastructure.redis_repository import RedisRepository
 
