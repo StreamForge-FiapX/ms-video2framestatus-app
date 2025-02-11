@@ -99,11 +99,23 @@ O microserviço é responsável por:
 #### **Estrutura de Diretórios**  
 ```plaintext
 ms-video2framestatus-app/
-├──src
-│  ├─domain
-│  └─infrastructure
-└──tests
-└── README.md
+├── Dockerfile
+├── README.md
+├── requirements.txt
+├── src
+│   ├── domain
+│   │   ├── repositories.py
+│   │   └── use_cases.py
+│   ├── infrastructure
+│   │   ├── redis_repository.py
+│   │   └── s3_event_parser.py
+│   └── main.py
+└── tests
+    ├── test_lambda_handler.py
+    ├── test_redis_repository.py
+    ├── test_repositories.py
+    ├── test_s3_event_parser.py
+    └── test_use_cases.py
 ```
 
 ---
